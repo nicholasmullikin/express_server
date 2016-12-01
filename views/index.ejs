@@ -6,8 +6,8 @@
 	</HEAD>
 	<BODY>
 		<DIV id = 'body'>
-		<H1><%= data[0].title %></H1>
-		<H3><%= data[0].desc %> </H3>
+		<H1><DIV id = 'header1' ><%= data[0].title %> <DIV></H1>
+		<H3><DIV id = 'header2' ><%= data[0].desc %>  <DIV></H3>
 		
 		<% for (var i = 0; i < data[0].questions.length; i++ ){ %>
 		<%	if (typeof data[0].questions != 'undefined' ){ %>
@@ -20,18 +20,14 @@
 						 <% if (typeof data[0].questions[i].answers[radio].options != 'undefined' && data[0].questions[i].answers[radio].options[0].type == "text"){ %>
 							<input id = '<%= data[0].questions[i].answers[radio].options[0].id %>' type = 'text'  >
 						<% } %>
-		<%			}%>
+					<%}%>
 					</form>
-		<%		}%>
+				<%}%>
 		<%	}  %>
 		<%} %>
 		</DIV>
 		<DIV id = 'footer'></DIV>
 		<button id="submit">submit</button>
 		<button id="display">display</button>
-
-		
-		
-		
 	</BODY>
 </HTML>

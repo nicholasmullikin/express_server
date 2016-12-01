@@ -39,6 +39,8 @@ var display  = function(){
 			body[i].hidden = true;
 		}
 	}
+document.getElementById('header1').innerHTML = "Recovery Activies Results";
+document.getElementById('header2').innerHTML = "These are the results";
 }
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('submit').addEventListener('click', saveData);
