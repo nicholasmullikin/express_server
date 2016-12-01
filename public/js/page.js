@@ -67,5 +67,6 @@ var correct = function(){
 		body[i].hidden = false;
 		body[i].disabled = false;
 		body[i].checked = false;
+		body[i].value = "";
 	}
 };
