@@ -16,11 +16,9 @@ app.get('/', function(req, res){
      else{
         var json_data_string = fs.readFileSync("data/sprint2.json", 'utf8'); 
         var json_data_object = JSON.parse(json_data_string);//need to know basis
-
         res.render("index.ejs", {data: json_data_object});
      }
   });
   
 }); // respond to requests for the default route
-
-app.listen(8000);
+app.listen(process.env.PORT || 8000)
