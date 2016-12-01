@@ -1,0 +1,48 @@
+[{
+	"id": "RA",
+	"title": "Recovery Activities",
+	"desc": "Please answer the following questions about your recovery period and leave any necessary comments. If your recovery was longer than four weeks, base your answers on the first four weeks of your recovery.",
+	"questions": [{
+		"id": "RA_5",
+		"question": "Did you miss any school or work?",
+		"answers": [{
+			"id": "RA_5_0",
+			"type": "radio",
+			"text": "no",
+			"options": [{
+				"text": ""
+			}]
+		},
+		{
+			"id": "RA_5_1",
+			"type": "radio",
+			"text": "yes",
+			"options": [{
+				"id": "RA_5_1_0",
+				"type": "text",
+				"text": "If yes, how many days(including half days)?"
+			}]
+		}]
+	},
+	{
+		"id": "RA_6",
+		"question": "Were you given work to complete? (i.e. schoolwork, homework, or work responsibilities)",
+		"answers": [{
+			"id": "RA_6_0",
+			"type": "radio",
+			"text": "no",
+			"options": [{
+			}]
+		},
+		{
+			"id": "RA_6_1",
+			"type": "radio",
+			"text": "yes",
+			"options": [{
+				"id": "RA_6_1_0",
+				"type": "text",
+				"text": "If yes, did you complete it?"
+			}]
+		}]
+	}]
+}]
