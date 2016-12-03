@@ -1,5 +1,6 @@
 var saveData = function (){
 var save = '{"title": "Concussion History","answers": [';
+var hasBeenViewed = false;
 
 var body = document.querySelectorAll("input");
 for(var i = 0; i < body.length; i++){
@@ -15,32 +16,36 @@ save += ']}';
 localStorage.setItem('json', save);
 }
 var display  = function(){
-	var json = JSON.parse(localStorage.getItem('json'));
-	var body = document.querySelectorAll("input");
-	for(var i = 0; i < body.length; i++){
-		var answer = findById(body[i].id, json);
-		if (answer == null){
-			removeElement(body[i].nextSibling);
-			body[i].hidden = true;
-			continue;
+if(!hasBeenViewed){
+		var json = JSON.parse(localStorage.getItem('json'));
+		var body = document.querySelectorAll("input");
+		for(var i = 0; i < body.length; i++){
+			var answer = findById(body[i].id, json);
+			if (answer == null){
+				removeElement(body[i].nextSibling);
+				body[i].hidden = true;
+				continue;
+			}
+			if(body[i].type == 'radio' && answer.answer == "Yes"){
+				body[i].disabled = true;
+			}
+			else if (body[i].type == 'radio')
+			{
+				body[i].hidden = true;
+			}
+			else if (body[i].type == 'text' && answer != null && findById(answer.id.substring(0, answer.id.length-2), json) != null && findById(answer.id.substring(0, answer.id.length-2), json).answer == 'Yes' ){
+				body[i].value = answer.answer;
+				body[i].disabled = true;
+			}
+			else {
+				body[i].hidden = true;
+			}
 		}
-		if(body[i].type == 'radio' && answer.answer == "Yes"){
-			body[i].disabled = true;
-		}
-		else if (body[i].type == 'radio')
-		{
-			body[i].hidden = true;
-		}
-		else if (body[i].type == 'text' && answer != null && findById(answer.id.substring(0, answer.id.length-2), json) != null && findById(answer.id.substring(0, answer.id.length-2), json).answer == 'Yes' ){
-			body[i].value = answer.answer;
-			body[i].disabled = true;
-		}
-		else {
-			body[i].hidden = true;
-		}
+	document.getElementById('header1').innerHTML = "Recovery Activies Results";
+	document.getElementById('header2').innerHTML = "These are the results";
+
+	hasBeenViewed= true;
 	}
-document.getElementById('header1').innerHTML = "Recovery Activies Results";
-document.getElementById('header2').innerHTML = "These are the results";
 }
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('submit').addEventListener('click', saveData);
@@ -69,4 +74,5 @@ var correct = function(){
 		body[i].checked = false;
 		body[i].value = "";
 	}
+	hasBeenViewed= false;
 };
