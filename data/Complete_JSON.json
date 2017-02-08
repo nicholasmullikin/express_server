@@ -3,10 +3,28 @@
 	"title": "Recovery Activities",
 	"desc": "Please answer the following questions about your recovery period and leave any necessary comments. If your recovery was longer than four weeks, base your answers on the first four weeks of your recovery.",
 	"questions": [{
-		"id": "RA_5",
+		"id": "RA_2",
+		"question": "On average, how many hours per night do you sleep?",
+		"answers": [{
+			"id": "RA_2_0",
+			"type": "radio",
+			"text": "no",
+		},
+		{
+			"id": "RA_2_1",
+			"type": "radio",
+			"text": "yes",
+			"options": [{
+				"id": "RA_2_1_0",
+				"type": "text",
+				"text": "If yes, how many days(including half days)?"
+			}]
+		}]
+	},{
+		"id": "RA_3",
 		"question": "Did you miss any school or work?",
 		"answers": [{
-			"id": "RA_5_0",
+			"id": "RA_3_0",
 			"type": "radio",
 			"text": "no",
 			"options": [{
@@ -14,32 +32,32 @@
 			}]
 		},
 		{
-			"id": "RA_5_1",
+			"id": "RA_3_1",
 			"type": "radio",
 			"text": "yes",
 			"options": [{
-				"id": "RA_5_1_0",
+				"id": "RA_3_1_0",
 				"type": "text",
 				"text": "If yes, how many days(including half days)?"
 			}]
 		}]
 	},
 	{
-		"id": "RA_6",
+		"id": "RA_4",
 		"question": "Were you given work to complete? (i.e. schoolwork, homework, or work responsibilities)",
 		"answers": [{
-			"id": "RA_6_0",
+			"id": "RA_4_0",
 			"type": "radio",
 			"text": "no",
 			"options": [{
 			}]
 		},
 		{
-			"id": "RA_6_1",
+			"id": "RA_4_1",
 			"type": "radio",
 			"text": "yes",
 			"options": [{
-				"id": "RA_6_1_0",
+				"id": "RA_4_1_0",
 				"type": "text",
 				"text": "If yes, did you complete it?"
 			}]
